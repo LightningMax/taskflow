@@ -1,6 +1,6 @@
 "use client";
 
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 import ProjetModalInformation from "./ProjectModalInformation";
 import { ProjectType, TaskType } from "../utils/typeModel";
 
@@ -10,6 +10,8 @@ type Props = {
 };
 
 export default function ProjectContainer({ project, task }: Props) {
+  const router = useRouter();
+
   const todoCount = task.filter(
     (elt) => elt.status.toLowerCase() === "a faire",
   ).length;
@@ -27,7 +29,7 @@ export default function ProjectContainer({ project, task }: Props) {
           className="btn btn-ghost"
           onClick={() =>
             (document.getElementById(
-              "projetModalInformation",
+              `projetModalInformation-${project.id}`,
             ) as HTMLDialogElement)!.showModal()
           }
         >
@@ -38,7 +40,10 @@ export default function ProjectContainer({ project, task }: Props) {
           {project.titre}
         </h1>
 
-        <button className="btn  p-5" onClick={() => redirect("/")}>
+        <button
+          className="btn  p-5"
+          onClick={() => router.push(`/project/${project.id}`)}
+        >
           Voir plus
         </button>
       </div>

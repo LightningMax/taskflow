@@ -9,7 +9,7 @@ type Props = {
 export default function ProjetModalInformation({ project }: Props) {
   return (
     <dialog
-      id="projetModalInformation"
+      id={`projetModalInformation-${project.id}`}
       className="modal modal-bottom sm:modal-middle"
     >
       <div className="modal-box">
