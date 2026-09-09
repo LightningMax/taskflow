@@ -7,16 +7,6 @@ datasource db {
   provider = "mysql"
 }
 
-model CONTENIR {
-  id_tache  Int    @default(autoincrement())
-  id_projet Int
-  PROJET    PROJET @relation(fields: [id_projet], references: [id_projet], onDelete: NoAction, onUpdate: NoAction, map: "CONTENIR_id_projet_FK")
-  TACHES    TACHES @relation(fields: [id_tache], references: [id_tache], onDelete: NoAction, onUpdate: NoAction, map: "CONTENIR_id_tache_FK")
-
-  @@id([id_tache, id_projet])
-  @@index([id_projet], map: "CONTENIR_id_projet_FK")
-}
-
 model PROJET {
   id_projet         Int        @id @default(autoincrement())
   titre             String     @db.VarChar(50)
@@ -24,7 +14,7 @@ model PROJET {
   date_creation     DateTime?  @default(now()) @db.Timestamp(0)
   date_modification DateTime?  @default(now()) @db.Timestamp(0)
   status            String     @db.VarChar(50)
-  CONTENIR          CONTENIR[]
+  taches    TACHES[]
 }
 
 model TACHES {
@@ -33,5 +23,6 @@ model TACHES {
   date_limite DateTime   @db.Date
   priorite    String     @db.VarChar(50)
   status      String     @db.VarChar(50)
-  CONTENIR    CONTENIR[]
+  id_projet   Int                                    
+  projet      PROJET   @relation(fields: [id_projet], references: [id_projet])
 }
