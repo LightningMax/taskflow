@@ -2,25 +2,14 @@
 
 import { redirect } from "next/navigation";
 import ProjetModalInformation from "./ProjectModalInformation";
-
-interface Task {
-  titre: string;
-  date_limite: string;
-  priorite: string;
-  status: string;
-}
+import { ProjectType, TaskType } from "../utils/typeModel";
 
 type Props = {
-  title?: string;
-  status?: string;
-  task: Task[];
+  project: ProjectType;
+  task: TaskType[];
 };
 
-export default function ProjectContainer({
-  title = "Erreur titre manquant",
-  status = "Erreur status manquant",
-  task = [],
-}: Props) {
+export default function ProjectContainer({ project, task }: Props) {
   const todoCount = task.filter(
     (elt) => elt.status.toLowerCase() === "a faire",
   ).length;
@@ -45,7 +34,9 @@ export default function ProjectContainer({
           <span className="border rounded-full border-white px-2">i</span>
         </button>
 
-        <h1 className="font-bold text-xl flex justify-center">{title}</h1>
+        <h1 className="font-bold text-xl flex justify-center">
+          {project.titre}
+        </h1>
 
         <button className="btn  p-5" onClick={() => redirect("/")}>
           Voir plus
@@ -72,13 +63,7 @@ export default function ProjectContainer({
         </table>
       </div>
 
-      <ProjetModalInformation
-        title="Test title"
-        description="testtttttttttttttttttttttttttttttttttttt"
-        dateCreation="aujourdhui"
-        dateModification="demain"
-        status="a venir"
-      />
+      <ProjetModalInformation project={project} />
     </div>
   );
 }
