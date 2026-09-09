@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import NavBar from "@/components/nav/Nav";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +15,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <body>
-        {children}
-        <p className="btn">test</p>
+        <header>
+          <NavBar />
+        </header>
+        <main>{children}</main>
+        <footer></footer>
       </body>
     </html>
   );
