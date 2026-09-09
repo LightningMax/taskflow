@@ -52,5 +52,3 @@ export default function ProjetModalInformation({ project }: Props) {
     </dialog>
   );
 }
-/**
- */

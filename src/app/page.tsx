@@ -2,7 +2,6 @@
 
 import ModalProjectForm from "@/components/formModal/ModalFormProject";
 import ModalTaskForm from "@/components/formModal/ModalFormTask";
-import ProjetModalInformation from "@/components/projetContainer/ProjectModalInformation";
 
 export default function Home() {
   return (
