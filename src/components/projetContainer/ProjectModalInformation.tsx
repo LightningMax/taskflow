@@ -1,20 +1,12 @@
 "use client";
 
+import { ProjectType } from "../utils/typeModel";
+
 type Props = {
-  title: string;
-  description: string;
-  dateCreation: string;
-  dateModification: string;
-  status: string;
+  project: ProjectType;
 };
 
-export default function ProjetModalInformation({
-  title = "Erreur titre manquant",
-  description = "Erreur description manquante",
-  dateCreation,
-  dateModification,
-  status = "Erreur status manquant",
-}: Props) {
+export default function ProjetModalInformation({ project }: Props) {
   return (
     <dialog
       id="projetModalInformation"
@@ -23,7 +15,7 @@ export default function ProjetModalInformation({
       <div className="modal-box">
         <div className="grid grid-cols-[1fr_auto] items-start">
           <div>
-            <h3 className="font-bold text-xl">{title}</h3>
+            <h3 className="font-bold text-xl">{project.titre}</h3>
           </div>
 
           <div>
@@ -35,7 +27,7 @@ export default function ProjetModalInformation({
 
         <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
           <legend className="fieldset-legend">description</legend>
-          <p className="">{description}</p>
+          <p className="">{project.description}</p>
         </fieldset>
 
         <div className="overflow-x-auto">
@@ -49,9 +41,9 @@ export default function ProjetModalInformation({
             </thead>
             <tbody>
               <tr>
-                <td>{dateCreation}</td>
-                <td>{dateModification}</td>
-                <td>{status}</td>
+                <td>{project.date_creation}</td>
+                <td>{project.date_modification}</td>
+                <td>{project.status}</td>
               </tr>
             </tbody>
           </table>
