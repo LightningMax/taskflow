@@ -1,8 +1,8 @@
 "use client";
 
-export default function ModalFormulaire() {
+export default function ModalProjectForm() {
   return (
-    <dialog id="modalForm" className="modal modal-bottom sm:modal-middle">
+    <dialog id="modalProjectForm" className="modal modal-bottom sm:modal-middle">
       <div className="modal-box">
         <div className="grid grid-cols-[1fr_auto] items-start">
           <div>

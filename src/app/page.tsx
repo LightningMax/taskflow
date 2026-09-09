@@ -1,6 +1,7 @@
 "use client";
 
-import ModalFormulaire from "@/components/modal/Modal";
+import ModalProjectForm from "@/components/formModal/ModalFormProject";
+import ModalTaskForm from "@/components/formModal/ModalFormTask";
 import ProjetModalInformation from "@/components/projetContainer/ProjectModalInformation";
 
 export default function Home() {
@@ -10,12 +11,24 @@ export default function Home() {
         className="btn"
         onClick={() =>
           (document.getElementById(
-            "modalForm",
+            "modalProjectForm",
           ) as HTMLDialogElement)!.showModal()
         }
       >
         Ajouter un Projet
       </button>
+
+      <button
+        className="btn"
+        onClick={() =>
+          (document.getElementById(
+            "modalTaskForm",
+          ) as HTMLDialogElement)!.showModal()
+        }
+      >
+        Ajouter une tache
+      </button>
+
       <button
         className="btn"
         onClick={() =>
@@ -27,7 +40,8 @@ export default function Home() {
         InfoProjet
       </button>
 
-      <ModalFormulaire />
+      <ModalProjectForm />
+      <ModalTaskForm />
       <ProjetModalInformation
         title="Test title"
         description="testtttttttttttttttttttttttttttttttttttt"
