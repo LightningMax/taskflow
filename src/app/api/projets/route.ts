@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "../../../../db/prisma";
 
-// Récupérer tous les projets
 export async function GET() {
   try {
     const projets = await prisma.pROJET.findMany({
@@ -18,7 +17,6 @@ export async function GET() {
   }
 }
 
-// Créer un nouveau projet
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
@@ -27,7 +25,6 @@ export async function POST(request: NextRequest) {
     const description = body.description;
     const status = body.status;
 
-    // On vérifie que tous les champs sont bien remplis
     if (!titre || !description || !status) {
       return NextResponse.json(
         { error: "titre, description et status sont requis" },
