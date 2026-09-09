@@ -24,10 +24,17 @@ export default function TaskContainer({ tasks, status }: Props) {
           return weightA - weightB;
         })
         .map((task) => (
-          <div key={task.id}>
-            <h1>{task.titre}</h1>
-            <span>{task.date_limite}</span>
-            <span>{task.priorite}</span>
+          <div
+            key={task.id}
+            className="bg-gray-900 m-5 p-5 rounded-xl border border-gray-800"
+          >
+            <div className="grid grid-cols-[1fr_auto]">
+              <h1 className="font-bold text-2xl">{task.titre}</h1>
+              <div className="grid grid-rows-2">
+                <span>{task.priorite}</span>
+                <span>{task.date_limite}</span>
+              </div>
+            </div>
           </div>
         ))}
     </div>
