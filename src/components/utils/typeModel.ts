@@ -9,6 +9,7 @@ export type ProjectType = {
 
 export type TaskType = {
   id: number;
+  id_project: number;
   titre: string;
   date_limite: string;
   priorite: string;
