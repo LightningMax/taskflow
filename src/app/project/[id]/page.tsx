@@ -1,10 +1,22 @@
 "use client";
 
+import ModalTaskForm from "@/components/formModal/ModalFormTask";
 import TaskContainer from "@/components/taskContainer/TaskContainer";
 
 export default function ProjectDetailPage() {
   return (
     <>
+      <button
+        className="btn"
+        onClick={() =>
+          (document.getElementById(
+            "modalTaskForm",
+          ) as HTMLDialogElement)!.showModal()
+        }
+      >
+        Ajouter une tache
+      </button>
+
       <div className="grid grid-cols-3 h-full int">
         <div className="bg-base-300 rounded-xl p-2 m-5">
           <h1 className="border-b flex justify-center text-xl p-5">A faire</h1>
@@ -129,6 +141,8 @@ export default function ProjectDetailPage() {
           />
         </div>
       </div>
+
+      <ModalTaskForm />
     </>
   );
 }
