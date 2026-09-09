@@ -22,7 +22,7 @@ export default function ProjectPage() {
             status: "a faire",
           },
           {
-            id: 1,
+            id: 2,
             id_project: 1,
             titre: "MOn titre",
             date_limite: "demain",
@@ -30,7 +30,7 @@ export default function ProjectPage() {
             status: "a faire",
           },
           {
-            id: 1,
+            id: 3,
             id_project: 1,
             titre: "MOn titre",
             date_limite: "demain",
@@ -38,7 +38,7 @@ export default function ProjectPage() {
             status: "a faire",
           },
           {
-            id: 1,
+            id: 4,
             id_project: 1,
             titre: "MOn titre",
             date_limite: "demain",
@@ -61,7 +61,7 @@ export default function ProjectPage() {
           {
             id: 1,
             id_project: 1,
-            titre: "MOn titre",
+            titre: "MOn titreAAAAAA",
             date_limite: "demain",
             priorite: "haute",
             status: "a faire",

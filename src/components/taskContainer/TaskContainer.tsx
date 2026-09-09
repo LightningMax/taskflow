@@ -23,8 +23,8 @@ export default function TaskContainer({ tasks, status }: Props) {
           const weightB = PRIORITY_ORDER[b.priorite.toLowerCase()] ?? 99;
           return weightA - weightB;
         })
-        .map((task, index) => (
-          <div key={task.id ?? index}>
+        .map((task) => (
+          <div key={task.id}>
             <h1>{task.titre}</h1>
             <span>{task.date_limite}</span>
             <span>{task.priorite}</span>
