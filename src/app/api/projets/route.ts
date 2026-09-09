@@ -1,12 +1,10 @@
-"use server";
-
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from "@/lib/prisma";
+import prisma from "../../../../db/prisma";
 
 // Récupérer tous les projets
 export async function GET() {
   try {
-    const projets = await prisma.projet.findMany({
+    const projets = await prisma.pROJET.findMany({
       orderBy: { date_creation: "desc" },
     });
 
@@ -25,22 +23,20 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
 
-    const id_projet = body.id_projet;
     const titre = body.titre;
     const description = body.description;
     const status = body.status;
 
     // On vérifie que tous les champs sont bien remplis
-    if (!id_projet || !titre || !description || !status) {
+    if (!titre || !description || !status) {
       return NextResponse.json(
-        { error: "id_projet, titre, description et status sont requis" },
+        { error: "titre, description et status sont requis" },
         { status: 400 },
       );
     }
 
-    const nouveauProjet = await prisma.projet.create({
+    const nouveauProjet = await prisma.pROJET.create({
       data: {
-        id_projet: id_projet,
         titre: titre,
         description: description,
         status: status,
