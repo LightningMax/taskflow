@@ -4,94 +4,136 @@ export default function ProjectPage() {
   return (
     <>
       <ProjectContainer
-        title="Test test"
-        status="c ok"
+        project={{
+          id: 1,
+          titre: "test",
+          description: "DDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
+          date_creation: "demain",
+          date_modification: "aujourdhui",
+          status: "a venir",
+        }}
         task={[
           {
+            id: 1,
+            id_project: 1,
             titre: "MOn titre",
             date_limite: "demain",
             priorite: "haute",
             status: "a faire",
           },
           {
+            id: 1,
+            id_project: 1,
             titre: "MOn titre",
             date_limite: "demain",
             priorite: "haute",
             status: "a faire",
           },
           {
+            id: 1,
+            id_project: 1,
             titre: "MOn titre",
             date_limite: "demain",
             priorite: "haute",
-            status: "en cours",
+            status: "a faire",
           },
           {
+            id: 1,
+            id_project: 1,
             titre: "MOn titre",
             date_limite: "demain",
             priorite: "haute",
-            status: "terminer",
+            status: "a faire",
           },
         ]}
       />
 
       <ProjectContainer
-        title="Test test"
-        status="c ok"
+        project={{
+          id: 3,
+          titre: "test",
+          description: "DDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
+          date_creation: "demain",
+          date_modification: "aujourdhui",
+          status: "a venir",
+        }}
         task={[
           {
+            id: 1,
+            id_project: 1,
             titre: "MOn titre",
             date_limite: "demain",
             priorite: "haute",
             status: "a faire",
           },
           {
+            id: 1,
+            id_project: 1,
             titre: "MOn titre",
             date_limite: "demain",
             priorite: "haute",
             status: "a faire",
           },
           {
+            id: 1,
+            id_project: 1,
             titre: "MOn titre",
             date_limite: "demain",
             priorite: "haute",
-            status: "en cours",
+            status: "a faire",
           },
           {
+            id: 1,
+            id_project: 1,
             titre: "MOn titre",
             date_limite: "demain",
             priorite: "haute",
-            status: "terminer",
+            status: "a faire",
           },
         ]}
       />
 
       <ProjectContainer
-        title="Test test"
-        status="c ok"
+        project={{
+          id: 2,
+          titre: "test",
+          description: "DDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
+          date_creation: "demain",
+          date_modification: "aujourdhui",
+          status: "a venir",
+        }}
         task={[
           {
+            id: 1,
+            id_project: 1,
             titre: "MOn titre",
             date_limite: "demain",
             priorite: "haute",
             status: "a faire",
           },
           {
+            id: 1,
+            id_project: 1,
             titre: "MOn titre",
             date_limite: "demain",
             priorite: "haute",
             status: "a faire",
           },
           {
+            id: 1,
+            id_project: 1,
             titre: "MOn titre",
             date_limite: "demain",
             priorite: "haute",
-            status: "en cours",
+            status: "a faire",
           },
           {
+            id: 1,
+            id_project: 1,
             titre: "MOn titre",
             date_limite: "demain",
             priorite: "haute",
-            status: "terminer",
+            status: "a faire",
           },
         ]}
       />
