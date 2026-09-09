@@ -1,4 +1,5 @@
 import ModalProjectForm from "@/components/formModal/ModalFormProject";
+import AddProjectButton from "@/components/formModal/AddProjectButton";
 import prisma from "../../../db/prisma";
 import ProjectContainer from "@/components/projetContainer/ProjetContainer";
 
@@ -11,16 +12,7 @@ export default async function ProjectPage() {
 
   return (
     <>
-      <button
-        className="btn"
-        onClick={() =>
-          (document.getElementById(
-            "modalProjectForm",
-          ) as HTMLDialogElement)!.showModal()
-        }
-      >
-        Ajouter un Projet
-      </button>
+      <AddProjectButton />
 
       {projets.map((projet) => (
         <ProjectContainer
